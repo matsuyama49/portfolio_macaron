@@ -1,0 +1,663 @@
+@charset "utf-8";
+
+/* 共通 */
+html{
+	font-size: 62.5%;
+}
+body{
+  font-family: '游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif;
+  font-size: 1.4rem;
+  color: #333;
+	overflow-x: hidden;
+}
+a{
+  color: #333;
+}
+#concept, #feature, #lineup, #access{
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+h2{
+  font-size: 3rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+h3{
+  font-size: 2rem;
+}
+.section-title span{
+  display: block;
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+
+/*ファーストビュー*/
+#splash{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 999;
+  background:#ffffff;
+  text-align:center;
+}
+#splash_logo{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#splash_logo img{
+  width:200px;
+}
+.fadeUp{
+  -webkit-animation-name: fadeUpAnime;
+          animation-name: fadeUpAnime;
+  -webkit-animation-duration:0.5s;
+          animation-duration:0.5s;
+  -webkit-animation-fill-mode:forwards;
+          animation-fill-mode:forwards;
+  opacity: 0;
+}
+@-webkit-keyframes fadeUpAnime{
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeUpAnime{
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ヘッダー */
+header{
+  margin: 0 auto;
+  background-color: #ECE9E5;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 900;
+	height: 60px;
+	display: flex;
+}
+.logo img{
+  width: 21%;
+  height: auto;
+	margin-top: 4%;
+	margin-left: 5%;
+}
+.burger{
+	margin-top: 4%;
+	margin-right: 5%;
+}
+.burger div{
+	width: 28px;
+	height: 2px;
+	background-color: #333;
+	margin: 5px;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+/*ナビゲーション*/
+.gnavi{
+	position: absolute;
+	right: 0;
+	height: 95vh;
+	top: 5vh;
+	background-color: #ECE9E5;
+	opacity: 0.9;
+	align-items: center;
+	width: 50%;
+	transform: translateX(100%);
+	transition: all 0.3s ease-in-out;
+}
+.nav-active{
+	transform: translateX(0%);
+}
+.gnavi ul{
+	margin-top: 10%;
+	height: 100%;
+	text-align: center;
+}
+.gnavi ul li{
+	margin-bottom: 30px;
+}
+.gnavi ul li a{
+  font-size:2rem;
+}
+.gnavi ul li a:hover{
+	text-decoration: underline;
+}
+.toggle .line1{
+	transform: rotate(-45deg) translate(-4px, 6px);
+}
+.toggle .line2{
+	opacity: 0;
+}
+.toggle .line3{
+	transform: rotate(45deg) translate(-4px, -6px);
+}
+
+
+/* メインビジュアル */
+h1{
+  position: absolute;
+  z-index: 2;
+  top: 15%;
+  left: 30%;
+  font-size:4rem;
+  letter-spacing: 0.1em;
+  color: #fff;
+}
+#mainvisual img{
+  width: 100%;
+  height: 110vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.slider{
+  position: relative;
+  z-index: 1;
+  margin-top: 8%;
+}
+#mainvisual{
+  position: relative;
+}
+
+
+/* コンセプト */
+#concept{
+  background-image: url(image/background.jpg);
+  padding: 60px 10px 40px 10px;
+}
+.concept-text{
+  text-align: center;
+  font-size: 1.4rem;
+  margin-top: 30px;
+  letter-spacing: 0.2em;
+  line-height: 1.5;
+}
+.concept-text p{
+  margin-bottom: 13px;
+}
+
+
+/* ライフスタイルイメージ */
+.life-image{
+  display: flex;
+  margin-top: -20px;
+}
+.life-image img{
+  width: 25%;
+  height: auto;
+}
+
+/* こだわり */
+#feature{
+  background-color: #C6B9A3;
+}
+.feature-wrapper{
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.feature-box-first{
+	width: 80%;
+	margin: 0 auto 40px auto;
+  box-shadow: 5px 10px 20px;
+  background-color: #fff;
+	opacity: 0;
+	transform: translateY(20px);
+	transition: all 1.0s 0s ease-out;
+}
+.feature-box-second{
+	width: 80%;
+	margin: 0 auto 40px auto;
+  box-shadow: 5px 10px 20px;
+  background-color: #fff;
+	opacity: 0;
+	transform: translateY(20px);
+	transition: all 2.0s 0s ease-out;
+}
+.feature-box-third{
+	width: 80%;
+	margin: 0 auto;
+  box-shadow: 5px 10px 20px;
+  background-color: #fff;
+	opacity: 0;
+	transform: translateY(20px);
+	transition: all 3.0s 0s ease-out;
+}
+.feature-wrapper img{
+  width: 100%;
+	height: 250px;
+	-o-object-fit: cover;
+	   object-fit: cover;
+}
+.feature-wrapper h3{
+  font-size: 1.7rem;
+  margin: 15px 10px 0 10px;
+  display: inline-block;
+  border-bottom: 1px solid;
+}
+.feature-wrapper p{
+  font-size: 1.4rem;
+  padding: 10px;
+	line-height: 1.5;
+}
+
+
+/* ラインナップ */
+#lineup{
+	background-image: url(image/background.jpg);
+}
+.lineup-wrapper{
+	margin-top: 30px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px 20px;
+	padding-left: 20px;
+}
+.lineup-product{
+	border: 1px double #CFA81A;
+	width: calc(100% / 2 - 20px);
+	background-color: #fff;
+}
+.product-image{
+	text-align: center;
+}
+.product-image img{
+	width: 100%;
+}
+.product-title{
+	margin-top: 10px;
+}
+.product-title h3{
+	font-size: 2.5rem;
+	text-align: center;
+}
+.product-title span{
+	display: block;
+	text-align: center;
+  font-size: 1rem;
+}
+.more-btn{
+	text-align: center;
+	margin-bottom: 20px;
+}
+.more-btn .btn-border {
+  border: none;
+  color: #fff;
+  background: #660000;
+	padding: 5px 20px 5px 20px;
+	font-size: 2rem;
+}
+.more-btn .btn-border:hover {
+  background: #990000;
+}
+/*モーダル*/
+.modal-main{
+	display: none;
+}
+.inner{
+	width: 100%;
+	height: 100%;
+	background-color: #5E5E5E;
+	color: #333;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+.inner-content{
+	text-align: center;
+	margin: 70px 50px;
+	padding: 0 0 15px 0;
+	border: 3px solid #CFA81A;
+	background-color: #fff;
+}
+.inner img{
+	width: 70%;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+.inner-title{
+	margin-top: 20px;
+	font-size: 2rem;
+	font-weight: bold;
+}
+.inner-text-price{
+	font-size: 1.5rem;
+	width: 90%;
+	text-align: center;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+.inner-text{
+	font-size: 1.1rem;
+	width: 90%;
+	text-align: center;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+.modalClose{
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: #660000;
+	font-size: 1.3rem;
+	color: #fff;
+	text-decoration: none;
+}
+.modalClose:hover{
+	background-color: #990000;
+	transition: 0.6s;
+}
+
+
+/* アクセス */
+.access-wrapper{
+	display: flex;
+	justify-content: center;
+	margin-top: 30px;
+}
+.access-wrapper img{
+	display: none;
+}
+.access-text{
+	text-align: center;
+}
+.access-wrapper iframe{
+	height: auto;
+	width: 350px;
+	height: 200px;
+}
+.access-wrapper .access-text{
+	margin-top: 20px;
+}
+#access .shop-fax{
+	padding-bottom: 20px;
+}
+.access-wrapper .access-text p{
+	font-size: 1.4rem;
+	margin-bottom: 10px;
+}
+
+
+/* ニュース */
+.content-wrapper{
+	background-color: #C6B9A3;
+	padding-top: 60px;
+  padding-bottom: 30px;
+}
+#news .section-title{
+	width: 30%;
+	margin: 0 auto;
+}
+.news-text{
+	width: 100%;
+}
+.news-text dl{
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 10px;
+	border-left: 1px solid #565656;
+	border-right: 1px solid #565656;
+}
+.news-text dt{
+	float:left;
+	font-size: 1.4rem;
+	width: 20%;
+	margin-left: 20px;
+	border-bottom: 1px dotted #565656;
+	padding-top:10px;
+}
+.news-text dd{
+	font-size: 1.4rem;
+	margin-left: 100px;
+	margin-right: 20px;
+	border-bottom: 1px dotted #565656;
+	padding-top:10px;
+}
+
+
+/* お問い合わせ */
+#contact{
+	padding-top: 60px;
+	padding-bottom: 30px;
+}
+:focus{
+  outline: none;
+}
+.contact-wrapper{
+	margin: 0 auto;
+}
+.contact-text{
+	display: inline-block;
+	vertical-align: top;
+	font-size: 1.4rem;
+	margin-bottom: 5px;
+}
+form{
+	margin: 0 auto;
+}
+.ct_iptxt{
+	display: flex;
+	flex-flow: column;
+	margin: 15px auto 0 auto;
+	width: 300px;
+}
+.form-name, .form-mail{
+	margin: 0 auto;
+	border: 1px solid #707070;
+	width: 300px;
+	height: 30px;
+}
+.request-about{
+	margin: 0 auto;
+	width: 300px;
+	border: 1px solid #707070;
+}
+::-webkit-input-placeholder{
+	font-size: 1.4rem;
+	opacity: 0.5;
+	font-family:  '游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif;
+}
+::-moz-placeholder{
+	font-size: 1.4rem;
+	opacity: 0.5;
+	font-family:  '游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif;
+}
+:-ms-input-placeholder{
+	font-size: 1.4rem;
+	opacity: 0.5;
+	font-family:  '游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif;
+}
+::-ms-input-placeholder{
+	font-size: 1.4rem;
+	opacity: 0.5;
+	font-family:  '游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif;
+}
+::placeholder{
+	font-size: 1.4rem;
+	opacity: 0.5;
+	font-family:  '游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif;
+}
+textarea{
+	font-size: 1.4rem;
+	font-family:  '游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif;
+}
+/* お問い合わせ セレクトタグ  */
+.cp_ipselect{
+	margin: 0 auto;
+	overflow: hidden;
+	width: 300px;
+	height: 30px;
+	text-align: center;
+}
+.cp_ipselect select{
+	width: 100%;
+	padding-right: 10px;
+	cursor: pointer;
+	text-indent: 0.01px;
+	text-overflow: ellipsis;
+	border: none;
+	outline: none;
+	background: transparent;
+	background-image: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	     appearance: none;
+}
+.cp_ipselect select::-ms-expand{
+  display: none;
+}
+.cp_ipselect.cp_sl02{
+	position: relative;
+	border: 1px solid #707070;
+}
+.cp_ipselect.cp_sl02::before{
+	position: absolute;
+	top: 0.9em;
+	right: 0.9em;
+	width: 0;
+	height: 0;
+	padding: 0;
+	content: '';
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid #666666;
+	pointer-events: none;
+}
+.cp_ipselect.cp_sl02::after{
+	position: absolute;
+	top: 0;
+	right: 2.5em;
+	bottom: 0;
+	width: 1px;
+	content: '';
+	border-left: 1px solid #bbbbbb;
+}
+.cp_ipselect.cp_sl02 select{
+	padding: 8px 30px 1px 3px;
+	color: #666666;
+}
+select{
+	font-size: 1.4rem;
+	font-family:  '游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif;
+}
+/* お問い合わせ 送信ボタン */
+.send-button{
+	font-family:  '游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif;
+	border: 1px solid #333;
+	background-color: #fff;
+	font-size: 1.7rem;
+	padding: 2px 30px;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	text-align: center;
+	cursor: pointer;
+	color: #333;
+}
+/*.send-button:hover{
+	background-color: #660000;
+	color: #fff;
+	transition: 0.6s;
+}
+a.btn-border {
+  border: none;
+  color: #fff;
+  background: #660000;
+}
+a.btn-border:hover {
+  background: #990000;
+}*/
+
+/* フッター */
+footer{
+  position: relative;
+	background: linear-gradient(to bottom, #CECECE, #1E1E1E)
+}
+footer a{
+  text-decoration: none;
+}
+footer a:hover{
+  text-decoration: underline;
+}
+footer .primary{
+  padding: 0 10px;
+}
+footer .secondary{
+  display: flex;
+  padding: 5px 5px;
+}
+footer .logo{
+  position: relative;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+	text-align: center;
+}
+.navi-row{
+  display: flex;
+	height: 30px;
+	width: 100%;
+}
+footer .navi{
+  margin-left: 5px;
+  padding: 0;
+  list-style: none;
+	padding-top: 10px;
+}
+footer .navi li{
+  display: inline-block;
+  margin-right: 5px;
+}
+footer .navi li:last-child{
+  margin-right: 0;
+}
+footer .navi li a{
+	font-size: 1rem;
+	color: #E8E8E8;
+}
+footer .sns-navi{
+  margin: 0 0 0 auto;
+  padding-top: 13px;
+	width: 15%;
+}
+footer .sns-navi img{
+	width: 15px;
+}
+footer .sns-navi li{
+  display: inline-block;
+  margin: 0 2px 0 0;
+  padding: 0;
+}
+footer .sns-navi li:last-child{
+  margin-right: 0;
+}
+footer .secondary{
+	padding: 15px 0;
+}
+footer .copyright{
+	font-size: 1rem;
+	color: #E8E8E8;
+	margin: 0 auto;
+}
